@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "defaultFile": "contracts/FunctionModifier.sol",
+  "environment": "solidity",
+  "setupCommands": ["npm i", "npx hardhat compile"],
+  "compileCommand": "npx hardhat compile",
+  "tests": [
+    { "itShould": "Compile", "command": "sh learn_tests/54.sh" },
+    { "itShould": "Call onlyOwner function", "command": "sh learn_tests/55.sh" },
+    { "itShould": "Call validAddress function", "command": "sh learn_tests/56.sh" },
+    { "itShould": "Call noReentrancy function", "command": "sh learn_tests/57.sh" }
+  ],
+  "learnerAccessibleFileList": ["contracts/*"]
+}
