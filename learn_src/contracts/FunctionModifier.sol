@@ -15,13 +15,20 @@ contract FunctionModifier {
 
     // Modifier to check that the caller is the owner of
     // the contract.
-
-    // write onlyOwner modifier
+    modifier onlyOwner() {
+        // write logic for checking the owner here
+        
+        _;
+    }
 
     // Modifiers can take inputs. This modifier checks that the
     // address passed in is not the zero address.
 
-    // write validAddress modifier
+    modifier validAddress(address _addr) {
+        // write logic for validAddress modifier to check if address is valid
+
+        _;        
+    }
 
     function changeOwner(address _newOwner) public onlyOwner validAddress(_newOwner) {
         owner = _newOwner;
@@ -31,7 +38,11 @@ contract FunctionModifier {
     // This modifier prevents a function from being called while
     // it is still executing.
 
-    // write noReentrancy modifier
+    modifier noReentrancy() {
+        // write logic for noReentrancy modifier here
+
+        _;
+    }
 
     function decrement(uint i) public noReentrancy {
         x -= i;
